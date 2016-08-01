@@ -6,9 +6,16 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
+import java.sql.Blob;
 
 /**
  * An entity Foodservice composed by three fields (id, email, name).
+ * (Должно быть описание магазина,
+ * телефон,
+ * адрес,
+ * условия доставки,
+ * ФИО владельца,
+ * картинка)
  * The Entity annotation indicates that this class is a JPA entity.
  * The Table annotation specifies the name for the table in the db.
  *
@@ -27,13 +34,25 @@ public class Foodservice {
   @GeneratedValue(strategy = GenerationType.AUTO)
   private long id;
   
-  // The user's email
+  // The foodservice's email
   @NotNull
   private String email;
   
-  // The user's name
+  // The foodservice's name
   @NotNull
   private String name;
+
+    private String description;
+    //private String deliveryCondition;TODO: case
+
+    private String ownerSurname;
+    private String ownerName;
+    private String ownerPatronymic;
+
+    private String address;
+    private String phone;
+
+    private Blob image;
 
   // ------------------------
   // PUBLIC METHODS
