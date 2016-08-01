@@ -1,10 +1,6 @@
 package gifterland3.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.sql.Blob;
 
@@ -44,7 +40,6 @@ public class Foodservice {
 
     private String description;
     //private String deliveryCondition;TODO: case
-
     private String ownerSurname;
     private String ownerName;
     private String ownerPatronymic;
@@ -52,6 +47,9 @@ public class Foodservice {
     private String address;
     private String phone;
 
+    //private Blob image;
+    //@Column(name="image")
+    @Lob
     private Blob image;
 
   // ------------------------
