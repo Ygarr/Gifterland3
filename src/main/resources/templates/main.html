@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<!--<html xmlns:th="http://www.thymeleaf.org" lang="en">-->
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <!--2. главная страница-->
+    <title>Main Gifterland3 page</title>
+
+
+    <style type="text/css">
+body {
+background-image: url('http://static.communitytable.parade.com/wp-content/uploads/2014/01/banana-not-good-for-monkeys-ftr.jpg');
+}
+
+    </style>
+</head>
+
+<body>
+<!--${message}-->
+<p th:text=" ${message} + '!'"/>
+
+<a href="login.html" th:href="@{/login}">login</a>
+
+<!--<p>Please select an option</p>-->
+<!--<ol>-->
+    <!--<li><a href="foodservice_shop_list.html" th:href="@{/foodservice_shop_list}">Market List</a></li>-->
+    <!--<li><a href="friends_list.html" th:href="@{/friends_list}">Friends List</a></li>-->
+<!--</ol>-->
+<!--</p>-->
+
+</body>
+</html>
