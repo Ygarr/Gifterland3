@@ -5,4 +5,6 @@ package gifterland3.models;
  *  картинка,название, цена, страна производитель, штрихкод товара
  */
 public class Meal {
+
+
 }
