@@ -16,7 +16,7 @@ import javax.inject.Inject;
 
 @Controller
 @RequestMapping("/")
-public class FBController {
+public class FacebookController {
 
     /**
      *     Controller is created by injecting a Facebook object into its constructor.
@@ -26,7 +26,7 @@ public class FBController {
     private ConnectionRepository connectionRepository;
 
     @Inject
-    public FBController(Facebook facebook, ConnectionRepository connectionRepository) {
+    public FacebookController(Facebook facebook, ConnectionRepository connectionRepository) {
         this.facebook = facebook;
         this.connectionRepository = connectionRepository;
     }
