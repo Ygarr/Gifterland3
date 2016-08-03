@@ -50,9 +50,9 @@ public class MainController {
         return "Sup! You! it is: " + now;
     }
 
-    @RequestMapping("/reset")
+    @RequestMapping(value ={"/reset","/login"})
     public String Reset() {
-        return "redirect:/index";
+        return "redirect:/";
     }
 
     @RequestMapping("/main")
