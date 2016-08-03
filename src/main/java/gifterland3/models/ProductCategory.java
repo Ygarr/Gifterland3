@@ -7,8 +7,8 @@ import javax.persistence.*;
  * Created by kdiv on 8/1/16.
  */
 @Entity
-@Table(name = "goodscategory")
-public class GoodsCategory {
+@Table(name = "productcategory")
+public class ProductCategory {
 
     /**
      * Колонка для поля
@@ -28,7 +28,7 @@ public class GoodsCategory {
      * Getter
      * @return id
      */
-    @OneToMany(mappedBy = "goodscategory")
+    @OneToMany(mappedBy = "poductcategory")
     public Integer getId() {
         return id;
     }
