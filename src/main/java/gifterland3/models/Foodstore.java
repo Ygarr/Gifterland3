@@ -2,10 +2,9 @@ package gifterland3.models;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
-import java.sql.Blob;
 
 /**
- * An entity Foodservice composed by three fields (id, email, name).
+ * An entity Foodstore composed by three fields (id, email, name).
  * (Должно быть описание магазина,
  * телефон,
  * адрес,
@@ -18,8 +17,8 @@ import java.sql.Blob;
  * @author borrowed
  */
 @Entity
-@Table(name = "Foodservices")
-public class Foodservice {
+@Table(name = "foodstores") //Capitalize?
+public class Foodstore {
 
   // ------------------------
   // PRIVATE FIELDS
@@ -29,40 +28,43 @@ public class Foodservice {
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
   private long id;
+
+    // The foodservice's name
+    @NotNull
+    private String name;
   
   // The foodservice's email
   @NotNull
   private String email;
   
-  // The foodservice's name
-  @NotNull
-  private String name;
+
 
     private String description;
     //private String deliveryCondition;TODO: case
-    private String ownerSurname;
+
     private String ownerName;
+    private String ownerSurname;
     private String ownerPatronymic;
 
     private String address;
     private String phone;
 
-    //private Blob image;
-    //@Column(name="image")
-    @Lob
-    private Blob image;
+//    //private Blob image;
+//    //@Column(name="image")
+//    @Lob
+//    private Blob image;
 
   // ------------------------
   // PUBLIC METHODS
   // ------------------------
   
-  public Foodservice() { }
+  public Foodstore() { }
 
-  public Foodservice(long id) {
+  public Foodstore(long id) {
     this.id = id;
   }
   
-  public Foodservice(String email, String name) {
+  public Foodstore(String email, String name) {
     this.email = email;
     this.name = name;
   }
@@ -93,4 +95,4 @@ public class Foodservice {
     this.name = value;
   }
   
-} // class Foodservice
+} // class Foodstore

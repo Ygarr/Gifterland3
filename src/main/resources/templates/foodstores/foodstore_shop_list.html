@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<!--Im beggin' xmlns is useless-->
+<html lang="en">
+<!--xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">-->
+<head>
+    <!--<meta charset="UTF-8">-->
+    <!--4. список магазинов-->
+    <title>Title</title>
+</head>
+<body>
+
+<h2>Owners</h2>
+
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th style="width: 150px;">Name</th>
+        <th >email</th>
+
+        <!--<th>City</th>-->
+        <th>Description</th>
+
+        <th style="width: 200px;">ownerSurname</th>
+        <th>ownerName</th>
+        <th>ownerPatronymic</th>
+
+        <th style="width: 200px;">Address</th>
+        <th>Telephone</th>
+        <!--<th style="width: 100px;">Pets</th>-->
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="foodstore : ${foodstoresList}">
+        <td th:text="${foodstore.name}"></td>
+        <td th:text="${foodstore.email}"></td>
+        <td th:text="${foodstore.description}"></td>
+
+        <!--<td>-->
+            <!--<a href="foodstoreDetails.html"-->
+               <!--th:href="@{|/foodstores/${foodstore.id}|}"-->
+               <!--th:text="|${foodstore.ownerName} ${foodstore.ownerSurname}|">Mary Smith</a>-->
+        <!--</td>-->
+
+        <td th:text="${foodstore.ownersurname}">t</td>
+        <td th:text="${foodstore.ownername}"></td>
+        <td th:text="${foodstore.ownerpatronymic}"></td>
+
+        <td th:text="${foodstore.address}"></td>
+        <!--<td th:text="${owner.city}">Cambridge</td>-->
+        <td th:text="${foodstore.phone}"></td>
+        <!--<td>-->
+                    <!--<span th:each="pet : ${owner.pets}" th:text="${pet.name}" th:remove="tag">-->
+                       <!--Rob&nbsp;-->
+                    <!--</span>-->
+        <!--</td>-->
+    </tr>
+    </tbody>
+</table>
+
+
+<a th:href="@{'/foodstore/new'}" href="createOrUpdateFoodstoreForm.html">Add Store</a>
+
+<!--<form action="/create">-->
+    <!--<input type="text" name="userName" value="First Grocery Store" th:value="${name}"/>-->
+    <!--<input type="text" name="userEmail" value="what@your.mail" th:value="${email}"/>-->
+    <!--<input type="submit" value="¡Create!"/>-->
+<!--</form>-->
+
+<!--<form action="/createfoodervice" action="add" method="post">-->
+<!--<form action="#" th:action="@{/createfoodervice}" th:object="${foodservice}" method="post">-->
+    <!--<input type="text" name="email" th:value="what@your.mail" value="what@your.mail"/>-->
+    <!--<input type="text" name="name" th:value="First Grocery Store" value="First Grocery Store"/>-->
+    <!--<input type="submit" value="¡Create!"/>-->
+<!--</form>-->
+
+
+<!-- Will produce '/gtvg/order/details?orderId=3' (plus rewriting) -->
+<!--<a href="details.html" th:href="@{/order/details(orderId=${o.id})}">view</a>-->
+
+<!--<a th:href="@{/create/(email=${email},name=${name})}">view</a>-->
+
+<!--<form action="/gtvg/subscribe">-->
+    <!--<fieldset>-->
+        <!--<input type="text" name="email" />-->
+        <!--<input type="submit" value="¡Suscríbeme!"/>-->
+    <!--</fieldset>-->
+<!--</form>-->
+
+</body>
+</html>
