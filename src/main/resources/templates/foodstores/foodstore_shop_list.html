@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<h2>Owners</h2>
+<h2>Foodstores</h2>
 
 <table class="table table-striped">
     <thead>
@@ -31,7 +31,7 @@
     </thead>
     <tbody>
     <tr th:each="foodstore : ${foodstoresList}">
-        <td th:text="${foodstore.name}"></td>
+        <td th:text="${foodstore.name}">hey</td>
         <td th:text="${foodstore.email}"></td>
         <td th:text="${foodstore.description}"></td>
 
@@ -41,9 +41,9 @@
                <!--th:text="|${foodstore.ownerName} ${foodstore.ownerSurname}|">Mary Smith</a>-->
         <!--</td>-->
 
-        <td th:text="${foodstore.ownersurname}">t</td>
-        <td th:text="${foodstore.ownername}"></td>
-        <td th:text="${foodstore.ownerpatronymic}"></td>
+        <td th:text="${foodstore.ownerSurname}">t</td>
+        <td th:text="${foodstore.ownerName}"></td>
+        <td th:text="${foodstore.ownerPatronymic}"></td>
 
         <td th:text="${foodstore.address}"></td>
         <!--<td th:text="${owner.city}">Cambridge</td>-->
@@ -58,7 +58,9 @@
 </table>
 
 
-<a th:href="@{'/foodstore/new'}" href="createOrUpdateFoodstoreForm.html">Add Store</a>
+<a th:href="@{'/foodstores/new'}" href="createOrUpdateFoodstoreForm.html">Add Store</a>
+<div></div>
+<a class="btn btn-primary" href="/foodstores/new">Add new ...Store again!</a>
 
 <!--<form action="/create">-->
     <!--<input type="text" name="userName" value="First Grocery Store" th:value="${name}"/>-->

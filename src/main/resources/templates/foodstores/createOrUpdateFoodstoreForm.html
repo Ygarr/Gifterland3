@@ -1,0 +1,102 @@
+<html>
+<div>
+    <form method="post" name="comment_form" id="comment_form" action="/foodstores/create" role="form">
+
+        <div class="form-group"><!--<div class="control-group"> -->
+            <label for="name">Foodstore</label>
+            <!--<textarea rows="5" class="form-control" id="foodstore" name="foodstore"/>-->
+            <input type="text" class="form-control" id="name" name="name"/>
+        </div>
+
+        <button type="submit" id="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+</html>
+
+<!--<!DOCTYPE html>-->
+
+<!--<html lang="en">-->
+
+
+<!--<head>-->
+    <!--<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>-->
+    <!--<title>___</title>-->
+<!--</head>-->
+
+<!--<body>-->
+    <!--<h2>-->
+        <!--<span th::if="${foodstore['new']}" th:remove="tag">New </span> Foodstore-->
+    <!--</h2>-->
+
+
+    <!--<div>-->
+    <!--<form th:object="${foodstore}" th:method="post" action="./foodstore_shop_list.html"-->
+        <!--th:action="@{${#httpServletRequest.servletPath}}" class="form-horizontal" id="add-foodstore-form">-->
+
+        <!--<div class="control-group">-->
+            <!--<label class="control-label">Foodstore name </label>-->
+            <!--<div class="controls">-->
+                <!--<input type="text" th:field="*{name}" />-->
+            <!--</div>-->
+        <!--</div>-->
+
+        <!--<div class="control-group">-->
+            <!--<label class="control-label">email</label>-->
+            <!--<div class="controls">-->
+                <!--<input type="text" th:field="*{email}" />-->
+            <!--</div>-->
+        <!--</div>-->
+
+        <!--<div class="control-group">-->
+            <!--<label class="control-label">description</label>-->
+            <!--<div class="controls">-->
+                <!--<input type="text" th:field="*{description}" />-->
+            <!--</div>-->
+        <!--</div>-->
+
+        <!--<div class="control-group">-->
+            <!--<label class="control-label">owner surname</label>-->
+            <!--<div class="controls">-->
+                <!--<input type="text" th:field="*{ownerSurname}" />-->
+            <!--</div>-->
+        <!--</div>-->
+
+        <!--<div class="control-group">-->
+            <!--<label class="control-label">ownername</label>-->
+            <!--<div class="controls">-->
+                <!--<input type="text" th:field="*{ownerName}" />-->
+            <!--</div>-->
+        <!--</div>-->
+
+        <!--<div class="control-group">-->
+            <!--<label class="control-label">ownerpatronymic</label>-->
+            <!--<div class="controls">-->
+                <!--<input type="text" th:field="*{ownerPatronymic}" />-->
+            <!--</div>-->
+        <!--</div>-->
+
+        <!--<div class="control-group">-->
+            <!--<label class="control-label">address</label>-->
+            <!--<div class="controls">-->
+                <!--<input type="text" th:field="*{address}" />-->
+            <!--</div>-->
+        <!--</div>-->
+    <!---->
+        <!--<div class="control-group">-->
+            <!--<label class="control-label">Telephone</label>-->
+            <!--<div class="controls">-->
+                <!--<input type="text" th:field="*{phone}" />-->
+            <!--</div>-->
+        <!--</div>-->
+
+        <!--<div class="form-actions">-->
+            <!--<button th:if="${foodstore['new']}" type="submit">Add Foodstore</button>-->
+            <!--<button th:unless="${foodstore['new']}" type="submit">Update Foodstore</button>-->
+        <!--</div>-->
+
+    <!--</form>-->
+<!--</div>-->
+
+<!--</body>-->
+
+<!--</html>-->

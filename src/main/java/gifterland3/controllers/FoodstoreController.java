@@ -4,8 +4,9 @@ import gifterland3.models.Foodstore;
 import gifterland3.models.FoodstoreDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.util.Map;
 
@@ -107,20 +108,20 @@ public class FoodstoreController {
    * @param name The new name.
    * @return A string describing if the user is succesfully updated or not.
    */
-  @RequestMapping("/update")
-  @ResponseBody
-  public String updateFoodstore(long id, String email, String name) {
-    try {
-      Foodstore foodstore = foodstoreDao.findOne(id);
-        foodstore.setEmail(email);
-        foodstore.setName(name);
-        foodstoreDao.save(foodstore);
-    }
-    catch (Exception ex) {
-      return "Error updating the user: " + ex.toString();
-    }
-    return "Foodstore succesfully updated!";
-  }
+//  @RequestMapping("/update")
+//  @ResponseBody
+//  public String updateFoodstore(long id, String email, String name) {
+//    try {
+//      Foodstore foodstore = foodstoreDao.findOne(id);
+//        foodstore.setEmail(email);
+//        foodstore.setName(name);
+//        foodstoreDao.save(foodstore);
+//    }
+//    catch (Exception ex) {
+//      return "Error updating the user: " + ex.toString();
+//    }
+//    return "Foodstore succesfully updated!";
+//  }
 
 //    @RequestMapping(value = "/foodstores", method = RequestMethod.GET)
 //    public String processFindForm(Foodstore foodstore, BindingResult result, Model model) {
@@ -155,6 +156,46 @@ public class FoodstoreController {
         map.put("foodtore", new Foodstore());
         map.put("foodstoresList", foodstoreDao.findAll());
         return "foodstores/foodstore_shop_list";
+    }
+
+
+    /**
+     * Форма добавления нового
+     *
+     * @param
+     * @param result
+     * @param map
+     * @return "addnewdivision"//not
+     */
+//    @RequestMapping(value = "/foodstores/new", method = RequestMethod.GET)
+//    public String addFoodstoresForm(@ModelAttribute("foodstore") Foodstore foodstore, BindingResult result, Map<String, Object> map) {
+//
+//        map.put("foodstore", foodstore);
+//        //public String initForm(Model model)
+////        Foodstore ofoodstore = new Foodstore();
+////        model.addAttribute(foodstore);
+//        return "foodstores/createOrUpdateFoodstoreForm";//
+//
+//    }
+
+//    @RequestMapping(value = "/foodstores/new/add", method = RequestMethod.POST)
+//    public String addingFoodstores(@ModelAttribute("foodstore") Foodstore foodstore, BindingResult result,Map<String, Object> map) {
+//
+//        foodstoreDao.save(foodstore);
+//        return "redirect:/foodstores/";
+//
+//    }
+
+    @RequestMapping(value="/foodstores/new", method = RequestMethod.GET)
+    public String newProject() {
+        //return "foodstores/new";
+        return "foodstores/createOrUpdateFoodstoreForm";
+    }
+
+    @RequestMapping(value = "/foodstores/create", method = RequestMethod.POST)
+    public ModelAndView create(@RequestParam("name") String name) {
+        foodstoreDao.save(new Foodstore("default@mail.com",name));
+        return new ModelAndView("redirect:/foodstores");
     }
 
 

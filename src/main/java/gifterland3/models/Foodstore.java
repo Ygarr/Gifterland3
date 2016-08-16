@@ -58,7 +58,8 @@ public class Foodstore {
   // PUBLIC METHODS
   // ------------------------
   
-  public Foodstore() { }
+  public Foodstore() {
+  }
 
   public Foodstore(long id) {
     this.id = id;
@@ -94,5 +95,57 @@ public class Foodstore {
   public void setName(String value) {
     this.name = value;
   }
-  
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String value) {
+        this.description = value;
+    }
+
+    /*
+    * ФИО
+     */
+    public String getOwnerSurname() {
+        return ownerSurname;
+    }
+
+    public void setOwnerSurname(String value) {
+        this.ownerSurname = value;
+    }
+
+    public String getOwnerName() {
+        return ownerName;
+    }
+
+    public void setOwnerName(String value) {
+        this.ownerName = value;
+    }
+    public String getOwnerPatronymic() {
+        return ownerPatronymic;
+    }
+
+    public void setOwnerPatronymic(String value) {
+        this.ownerPatronymic = value;
+    }
+
+    /*
+    *
+     */
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String value) {
+        this.address = value;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String value) {
+        this.phone = value;
+    }
 } // class Foodstore
