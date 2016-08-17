@@ -184,10 +184,23 @@ public class FoodstoreController {
         return "foodstores/createOrUpdateFoodstoreForm";
     }
 
+//    @RequestMapping(value = "/foodstores/create", method = RequestMethod.POST)
+//    public ModelAndView create(@RequestParam("name") String name) {
+//        foodstoreDao.save(new Foodstore("default@mail.com",name));
+//        return new ModelAndView("redirect:/foodstores");
+//    }
+
+    /**
+     * Добавление . Перенаправление .
+     *
+     * @param
+     * @param
+     * @return /
+     */
     @RequestMapping(value = "/foodstores/create", method = RequestMethod.POST)
-    public ModelAndView create(@RequestParam("name") String name) {
-        foodstoreDao.save(new Foodstore("default@mail.com",name));
-        return new ModelAndView("redirect:/foodstores");
+    public String addFoodstore(@ModelAttribute("foodstore") Foodstore foodstore, BindingResult result,Map<String, Object> map) {
+        foodstoreDao.save(foodstore);
+        return "redirect:/foodstores";
     }
 
 
