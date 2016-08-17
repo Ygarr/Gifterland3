@@ -178,14 +178,6 @@ public class FoodstoreController {
 //
 //    }
 
-//    @RequestMapping(value = "/foodstores/new/add", method = RequestMethod.POST)
-//    public String addingFoodstores(@ModelAttribute("foodstore") Foodstore foodstore, BindingResult result,Map<String, Object> map) {
-//
-//        foodstoreDao.save(foodstore);
-//        return "redirect:/foodstores/";
-//
-//    }
-
     @RequestMapping(value="/foodstores/new", method = RequestMethod.GET)
     public String newProject() {
         //return "foodstores/new";
