@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+<!--5. список товаров в магазине-->
+<title>Meals by Categories</title>
+</head>
+<body>
+
+<div>
+    <a class="btn btn-primary" href="/foodstores/productcategories/new">Add new category</a>
+    <table class="table table-striped" id="categories_list">
+        <thead>
+        <tr>
+            <th>Element</th>
+            <th>Action</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr data-th-each="productcategory : ${productcategories}">
+            <td class="name" data-th-text="${productcategory.name}"></td>
+            <td>
+                <a th:href="@{'/foodstores/productcategories/{id}/delete'(id=${productcategory.id})}" class="delete" th:attr="name=${productcategory.name}">
+<span class="fa-stack">
+<i class="glyphicon glyphicon-trash"></i>
+</span>
+                </a>
+            </td>
+
+            <td>
+                <a th:href="@{'/foodstores/productcategories/{id}/edit'(id=${productcategory.id})}" class="edit" th:attr="name=${productcategory.name}">
+<span class="fa-stack">
+<i class="glyphicon glyphicon-edit"></i>
+</span>
+                </a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>

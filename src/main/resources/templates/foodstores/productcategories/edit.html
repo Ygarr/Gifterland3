@@ -1,0 +1,12 @@
+<html >
+<div >
+    <form method="post" name="_form" id="_form" action="/foodstores/productcategories//update" role="form">
+        <div class="form-group">
+            <label for="name">Category, of product</label>
+            <textarea rows="5" class="form-control" id="name" name="name" th:text="${productcategory.name}"/>
+        </div>
+        <input type="hidden" id="productcategory_id" rows="5" class="form-control" name="productcategory_id" th:value="${productcategory.id}"/>
+        <button type="submit" id="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+</html>

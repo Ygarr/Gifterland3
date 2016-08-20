@@ -1,6 +1,7 @@
 package gifterland3.models;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 //import org.apache.commons.lang.WordUtils;
 
 /**
@@ -9,6 +10,17 @@ import javax.persistence.*;
 @Entity
 @Table(name = "productcategory")
 public class ProductCategory {
+
+    public ProductCategory() {
+    }
+
+    public ProductCategory(Integer id) {
+        this.id = id;
+    }
+
+    public ProductCategory(String name) {
+        this.name = name;
+    }
 
     /**
      * Колонка для поля
@@ -23,12 +35,13 @@ public class ProductCategory {
      * name
      */
     @Column(name = "name")
+    @NotNull
     private String name;
     /**
      * Getter
      * @return id
      */
-    @OneToMany(mappedBy = "poductcategory")
+    //@OneToMany(mappedBy = "poductcategory")
     public Integer getId() {
         return id;
     }
