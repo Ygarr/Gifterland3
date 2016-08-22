@@ -1,6 +1,5 @@
 package gifterland3;
 
-import gifterland3.models.ProductCategory;
 import gifterland3.models.ProductCategoryDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -28,14 +27,14 @@ public class Application implements CommandLineRunner {
 
     @Override  //If  added CommandLineRunner
     public void run(String... strings) throws Exception { //TODO move to script or DB
-        productCategoryDao.save(new ProductCategory("Pizza"));
-        productCategoryDao.save(new ProductCategory("Sushi"));
-        productCategoryDao.save(new ProductCategory("Kebab"));
-        productCategoryDao.save(new ProductCategory("Garnish"));
-        productCategoryDao.save(new ProductCategory("Burger"));
-        productCategoryDao.save(new ProductCategory("Sandwich"));
-        productCategoryDao.save(new ProductCategory("Salad"));
-        productCategoryDao.save(new ProductCategory("Drinks"));
+//        productCategoryDao.save(new ProductCategory("Pizza"));
+//        productCategoryDao.save(new ProductCategory("Sushi"));
+//        productCategoryDao.save(new ProductCategory("Kebab"));
+//        productCategoryDao.save(new ProductCategory("Garnish"));
+//        productCategoryDao.save(new ProductCategory("Burger"));
+//        productCategoryDao.save(new ProductCategory("Sandwich"));
+//        productCategoryDao.save(new ProductCategory("Salad"));
+//        productCategoryDao.save(new ProductCategory("Drinks"));
     }
 
 

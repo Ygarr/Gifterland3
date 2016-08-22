@@ -8,7 +8,7 @@
   <version>0.0.1-SNAPSHOT</version>
 
   <name>gifterland3</name>
-  <description>Use Spring Data JPA + Hibernate + MySQL in Spring Boot</description>
+  <description>Spring Data JPA + Hibernate + H2DB in Spring Boot</description>
 
   <parent>
     <groupId>org.springframework.boot</groupId>
@@ -49,6 +49,11 @@
           </exclusions>
       </dependency>
 
+      <!--<dependency>-->
+          <!--<groupId>org.springframework</groupId>-->
+          <!--<artifactId>spring-jdbc</artifactId>-->
+      <!--</dependency>-->
+
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-data-jpa</artifactId>
@@ -61,6 +66,7 @@
           <groupId>com.h2database</groupId>
           <artifactId>h2</artifactId>
           <version>${h2.version}</version>
+          <!--<scope>runtime</scope>-->
           <!--<scope>test</scope>-->
       </dependency>
 
@@ -75,11 +81,11 @@
           <artifactId>spring-boot-starter-thymeleaf</artifactId>
       </dependency>
       <!--dunno know for what this-->
-      <dependency>
-          <groupId>org.springframework.boot</groupId>
-          <artifactId>spring-boot-devtools</artifactId>
-          <optional>true</optional>
-      </dependency>
+      <!--<dependency>-->
+          <!--<groupId>org.springframework.boot</groupId>-->
+          <!--<artifactId>spring-boot-devtools</artifactId>-->
+          <!--<optional>true</optional>-->
+      <!--</dependency>-->
 
       <!--it will be added transitively as deependency-->
       <!--<dependency>-->
@@ -91,6 +97,19 @@
           <groupId>org.springframework.social</groupId>
           <artifactId>spring-social-facebook</artifactId>
           <version>2.0.3.RELEASE</version>
+      </dependency>
+
+
+      <!--without this will be used default:
+      url='jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'-->
+      <!--Without the "spring-boot-starter-jdbc" dependency "spring.datasource.url" settings
+      in file "application.properties" are not processed.
+      That file is actually processed, but not the jdbc settings.
+      Spring boot will create its own testdb in the memory,
+      which destroys the data after closing the application.-->
+      <dependency>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-starter-jdbc</artifactId>
       </dependency>
 
   </dependencies>
