@@ -28,6 +28,12 @@ public class Meal {
     @ManyToOne(optional = false)
     private ProductCategory category;
 
+    @JoinColumn(name = "foodstore_id", referencedColumnName = "id", nullable=true)
+    @OneToOne //Но одно наименование может быть у нескольих магазинов?
+    private Foodstore foodstore;
+
+    //TODO:Поле количество наименования блюда для отдельного магазина?
+
 
     public Integer getId() {
         return id;
@@ -58,9 +64,17 @@ public class Meal {
         return category;
     }
 
-    public void setCategory(ProductCategory category) {
-        this.category = category;
+    public void setCategory(ProductCategory productCategory) {
+        this.category = productCategory;
     }
 
+
+    public Foodstore getFoodstore() {
+        return foodstore;
+    }
+
+    public void setFoodstore(Foodstore store) {
+        this.foodstore = store;
+    }
 
 }
