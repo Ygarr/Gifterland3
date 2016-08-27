@@ -48,6 +48,9 @@
         <td th:text="${foodstore.address}"></td>
         <!--<td th:text="${owner.city}">Cambridge</td>-->
         <td th:text="${foodstore.phone}"></td>
+        <td>
+            <a href="/productcategories/foodstore_shop_meal_list.html" th:href="@{/productcategories/foodstore_shop_meal_list(foodstoreId=${foodstore.id})}">view</a>
+        </td>
         <!--<td>-->
                     <!--<span th:each="pet : ${owner.pets}" th:text="${pet.name}" th:remove="tag">-->
                        <!--Rob&nbsp;-->
