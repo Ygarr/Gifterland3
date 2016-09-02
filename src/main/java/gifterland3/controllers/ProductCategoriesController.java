@@ -1,5 +1,6 @@
 package gifterland3.controllers;
 
+import gifterland3.models.MealDao;
 import gifterland3.models.ProductCategory;
 import gifterland3.models.ProductCategoryDao;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,9 +22,13 @@ public class ProductCategoriesController {
     @Autowired
     private ProductCategoryDao productCategoryDao;
 
+    @Autowired
+    private MealDao mealDao;
+
     @RequestMapping(value = "foodstore_shop_meal_list", method = RequestMethod.GET)
     public String listPosts(Model model) {
         model.addAttribute("productcategories", productCategoryDao.findAll());
+        model.addAttribute("meals", mealDao.findAll());
         return "foodstores/productcategories/foodstore_shop_meal_list"; //категории и товары неразделимы, поэтому сущность категории отображается в товарах
 
     }
@@ -58,6 +63,6 @@ public class ProductCategoriesController {
                        Model model) {
         ProductCategory productCategory = productCategoryDao.findOne(id);
         model.addAttribute("productCategory", productCategory);
-        return "oodstores/productcategories/edit";
+        return "foodstores/productcategories/edit";
     }
 }

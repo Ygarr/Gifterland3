@@ -11,35 +11,61 @@
     <table class="table table-striped" id="categories_list">
         <thead>
         <tr>
+            <th>SNO</th>
             <th>Element</th>
             <th>Action</th>
+            <th></th>
             <th></th>
         </tr>
         </thead>
         <tbody>
-        <tr data-th-each="productcategory : ${productcategories}">
-            <td class="name" data-th-text="${productcategory.name}"></td>
-            <td>
-                <a th:href="@{'/foodstores/productcategories/{id}/delete'(id=${productcategory.id})}" class="delete" th:attr="name=${productcategory.name}">
-<span class="fa-stack">
-<i class="glyphicon glyphicon-trash"></i>
-</span>
-                </a>
-            </td>
-
-            <td>
-                <a th:href="@{'/foodstores/productcategories/{id}/edit'(id=${productcategory.id})}" class="edit" th:attr="name=${productcategory.name}">
-<span class="fa-stack">
-<i class="glyphicon glyphicon-edit"></i>
-</span>
-                </a>
+        <tr data-th-each="productcategory,iterationStatus : ${productcategories}">
+            <td th:text="${iterationStatus.count}">1</td>
+            <td class="name" data-th-text="${productcategory.name}">
+                <!--${#strings.equals(first, second)}-->
+                    <tr th:each="meal : ${meals}">
+                        <td class="meal name" data-th-text="${meal.name}"></td>
+                    </tr>
             </td>
 
 
+            <!--<td class="meal name" data-th-text="${meal.name}"></td>-->
+            <!--<td class="cat" data-th-text="${meal.productcategory.name}"></td>-->
 
+            <!--<td>-->
+            <!--<a href="/meal_descr.html" th:href="@{/meal_descr(mealId=${meal.id})}">view</a>-->
+            <!--</td>-->
+
+            <!--<td>-->
+            <!--<a th:href="@{'/foodstores/productcategories/{id}/delete'(id=${productcategory.id})}" class="delete" th:attr="name=${productcategory.name}">-->
+            <!--<span class="fa-stack">-->
+            <!--<i class="glyphicon glyphicon-trash"></i>-->
+            <!--</span>-->
+            <!--</a>-->
+            <!--</td>-->
+
+            <!--<td>-->
+            <!--<a th:href="@{'/foodstores/productcategories/{id}/edit'(id=${productcategory.id})}" class="edit" th:attr="name=${productcategory.name}">-->
+            <!--<span class="fa-stack">-->
+            <!--<i class="glyphicon glyphicon-edit"></i>-->
+            <!--</span>-->
+            <!--</a>-->
+            <!--</td>-->
         </tr>
+
         </tbody>
     </table>
+
+    Список:
+    <br> </br>
+    <!--  TODO label-->
+    <tr th:each="meal : ${meals}" >
+        <td class="meal name" data-th-text="${meal.name}" ></td>
+        <td class="categor" data-th-text="${meal.category.name}"></td>
+        <td><a href="/meal_descr.html" th:href="@{/meal_descr(mealId=${meal.id})}">view</a></td>
+
+        <br> </br>
+    </tr>
 
     <p>
         <a href="foodstore_shop_list.html" th:href="@{/foodstores}">Return to foodstores list</a>
