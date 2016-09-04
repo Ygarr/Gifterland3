@@ -153,7 +153,7 @@ public class FoodstoreController {
      */
     @RequestMapping("/foodstores")
     public String listFoodstores(Map<String, Object> map) {
-        map.put("foodtore", new Foodstore());
+        //map.put("foodtore", new Foodstore());
         map.put("foodstoresList", foodstoreDao.findAll());
         return "foodstores/foodstore_shop_list";
     }

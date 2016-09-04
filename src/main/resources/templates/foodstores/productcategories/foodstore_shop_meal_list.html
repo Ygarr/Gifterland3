@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:td="http://www.w3.org/1999/XSL/Transform">
 <head>
 <!--5. список товаров в магазине-->
 <title>Meals by Categories</title>
@@ -61,7 +61,8 @@
     <!--  TODO label-->
     <tr th:each="meal : ${meals}" >
         <td class="meal name" data-th-text="${meal.name}" ></td>
-        <td class="categor" data-th-text="${meal.category.name}"></td>
+        <td class="Сat." data-th-text="${meal.category.name}"></td>
+        <td class="Eatery" data-th-text="${meal.foodstore != null} ? ${meal.foodstore.name}"></td>
         <td><a href="/meal_descr.html" th:href="@{/meal_descr(mealId=${meal.id})}">view</a></td>
 
         <br> </br>

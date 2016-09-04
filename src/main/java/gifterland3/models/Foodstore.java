@@ -60,6 +60,13 @@ public class Foodstore {
 //    //@Column(name="image")
 //    @Lob
 //    private Blob image;
+//@ManyToOne
+//@JoinColumn(name="meal_id",
+//        insertable=false, updatable=false,
+//        nullable=false)
+//@OneToMany(mappedBy="foodstore")
+//private Set<Meal> meal;
+//private Meal meal;
 
   // ------------------------
   // PUBLIC METHODS

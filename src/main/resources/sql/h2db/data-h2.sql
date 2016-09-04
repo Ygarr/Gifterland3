@@ -35,6 +35,17 @@ VALUES (
 , 3 -- foodstore_id
 );
 
+
+
+
+
+/*
+INSERT INTO foodstores VALUES (1, 'Super Grocery Store', 'whatsyour@ml.eu', 'Поставляем свежакъ', 'Madison', 'Deputat','Deputatovich','Конча Заспа, 23-567','608-555-1023');
+INSERT INTO foodstores VALUES (2, 'Great Name', 'whatsyour@mylo.com', 'Быстро, скоро, дешево', 'Иван', 'Иванов','Сергеевич','Николаев, Космонавтов, 34','095-1023');
+INSERT INTO foodstores VALUES (3, 'Точный адрес', 'описание', 'email@service.com', 'Заведение №71', 'Хозяй','Хозяевич','Хозяйнов','095-87878-1023');
+*/
+
+
 /*
 SELECT
 productcategory.name as категория
@@ -54,3 +65,4 @@ on foodstores.id = meal.foodstore_id
 ;
 */
 
+-- show columns from users;

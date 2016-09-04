@@ -26,6 +26,8 @@ public interface FoodstoreDao extends CrudRepository<Foodstore, Long> {
 
     public Iterable<Foodstore> findAll();
 
+    //Foodstore findByMeal(Meal meal);
+
     //public Foodstore save(Foodstore foodstore);
 
 } // class FoodstoreDao  AKA Repository!!!

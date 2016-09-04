@@ -1,8 +1,6 @@
 package gifterland3.controllers;
 
-import gifterland3.models.MealDao;
-import gifterland3.models.ProductCategory;
-import gifterland3.models.ProductCategoryDao;
+import gifterland3.models.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -25,12 +23,26 @@ public class ProductCategoriesController {
     @Autowired
     private MealDao mealDao;
 
+    @Autowired
+    private FoodstoreDao foodstoreDao;
+
     @RequestMapping(value = "foodstore_shop_meal_list", method = RequestMethod.GET)
-    public String listPosts(Model model) {
+    public String listAllMeals(Model model) {
         model.addAttribute("productcategories", productCategoryDao.findAll());
         model.addAttribute("meals", mealDao.findAll());
+        model.addAttribute("foodstores", foodstoreDao.findAll());
         return "foodstores/productcategories/foodstore_shop_meal_list"; //категории и товары неразделимы, поэтому сущность категории отображается в товарах
 
+    }
+
+    @RequestMapping(value = "foodstore_shop_meal_list/detail/{foodstoreId}", method = RequestMethod.GET)
+    public String listMeals(@PathVariable("foodstoreId") int foodstoreId, Model model) {
+        model.addAttribute("productcategories", productCategoryDao.findAll());
+        Foodstore foodstore = foodstoreDao.findOne((long) foodstoreId);
+       // Meal meals = mealDao.findByFoodstore(foodstore);
+//        model.addAttribute("meals", mealDao.findAll());
+        //model.addAttribute("meals", mealDao.findByFoodstore(foodstore));
+        return "foodstores/productcategories/foodstore_shop_meal_list";
     }
 
     @RequestMapping(value="/new", method = RequestMethod.GET)

@@ -28,9 +28,9 @@ public class Meal {
     @ManyToOne(optional = false)
     private ProductCategory category;
 
-    @JoinColumn(name = "foodstore_id", referencedColumnName = "id", nullable=true)
-    @OneToOne //Но одно наименование может быть у нескольих магазинов?
-    private Foodstore foodstore;
+    @JoinColumn(name = "foodstore_id", referencedColumnName = "id")
+    @ManyToOne(optional = true)
+    private Foodstore foodstore; //HashSet?
 
     //TODO:Поле количество наименования блюда для отдельного магазина?
 
@@ -70,11 +70,11 @@ public class Meal {
 
 
     public Foodstore getFoodstore() {
-        return foodstore;
+        return   foodstore;
     }
 
     public void setFoodstore(Foodstore store) {
-        this.foodstore = store;
+        this.foodstore =  store;
     }
 
 }
