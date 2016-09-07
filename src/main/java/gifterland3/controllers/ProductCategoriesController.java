@@ -39,8 +39,8 @@ public class ProductCategoriesController {
     public String listMeals(@PathVariable("foodstoreId") int foodstoreId, Model model) {
         model.addAttribute("productcategories", productCategoryDao.findAll());
         Foodstore foodstore = foodstoreDao.findOne((long) foodstoreId);
-       // Meal meals = mealDao.findByFoodstore(foodstore);
-//        model.addAttribute("meals", mealDao.findAll());
+        //Meal meals = mealDao.findByFoodstore(foodstore);
+        model.addAttribute("meals", foodstore.getMeals());
         //model.addAttribute("meals", mealDao.findByFoodstore(foodstore));
         return "foodstores/productcategories/foodstore_shop_meal_list";
     }

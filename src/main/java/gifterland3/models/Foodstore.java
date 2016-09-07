@@ -2,6 +2,7 @@ package gifterland3.models;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.util.Set;
 
 /**
  * An entity Foodstore composed by three fields (id, email, name).
@@ -55,6 +56,9 @@ public class Foodstore {
     private String address;
     @Column(name = "phone")
     private String phone;
+
+    @OneToMany(mappedBy="foodstore")
+    private Set<Meal> meal;
 
 //    //private Blob image;
 //    //@Column(name="image")
@@ -161,5 +165,9 @@ public class Foodstore {
 
     public void setPhone(String value) {
         this.phone = value;
+    }
+
+    public Set<Meal> getMeals() {
+        return meal;
     }
 } // class Foodstore
