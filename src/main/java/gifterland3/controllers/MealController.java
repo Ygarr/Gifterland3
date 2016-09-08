@@ -35,11 +35,7 @@ public class MealController {
 
     @RequestMapping(value = "meal_descr/detail/{mealId}", method = RequestMethod.GET)
     public String detailMeal(@PathVariable("mealId") Long mealId, Model model) {
-        //model.addAttribute("productcategories", productCategoryDao.findAll());
-       // Foodstore foodstore = foodstoreDao.findOne((long) foodstoreId);
-        //Meal meals = mealDao.findByFoodstore(foodstore);
-       // model.addAttribute("meals", foodstore.getMeals());
-        //model.addAttribute("meals", mealDao.findByFoodstore(foodstore));
+
         Meal meal = mealDao.findOne(mealId);
         model.addAttribute("meal", meal);
         return "meal_descr";
