@@ -11,4 +11,4 @@ import javax.transaction.Transactional;
 @Transactional
 public interface MealDao extends CrudRepository<Meal, Long> {
 
- }
+}

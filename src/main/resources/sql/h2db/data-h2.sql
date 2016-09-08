@@ -14,6 +14,7 @@ INSERT INTO productcategory VALUES (9,'Deserts');
 INSERT INTO foodstores VALUES (1, 'Super Grocery Store', 'whatsyour@ml.eu', 'Поставляем свежакъ', 'Madison', 'Deputat','Deputatovich','Конча Заспа, 23-567','608-555-1023');
 INSERT INTO foodstores VALUES (2, 'Great Name', 'whatsyour@mylo.com', 'Быстро, скоро, дешево', 'Иван', 'Иванов','Сергеевич','Николаев, Космонавтов, 34','095-1023');
 INSERT INTO foodstores VALUES (3, 'Точный адрес', 'описание', 'email@service.com', 'Заведение №71', 'Хозяй','Хозяевич','Хозяйнов','095-87878-1023');
+INSERT INTO foodstores VALUES (4, 'ул. Центральная 23a-45', 'Быстро и доступно', '1@m-m.com', 'Ресторация №1', 'Виктор','Глебович','Симов','095-87878-2222');
 
 INSERT INTO meal VALUES (1, 897243425, 'China', 'Цезарь', 25.99 ,7, null);  --TODO generate data
 INSERT INTO meal VALUES (2, 897243425, 'Poland', 'Multivitamin', 5.99 ,8, 3);
@@ -35,7 +36,23 @@ VALUES (
 , 3 -- foodstore_id
 );
 
-
+INSERT INTO meal (
+id
+, barcode
+, manufacturer
+, name
+, price
+, category_id
+, foodstore_id)
+VALUES (
+4
+, 823288825
+, 'Ukraine' -- TODO справочник
+, 'Греческий'
+, 22.99
+, 7
+, 4 -- foodstore_id
+);
 
 
 

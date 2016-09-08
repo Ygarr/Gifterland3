@@ -63,7 +63,8 @@
         <td class="meal name" data-th-text="${meal.name}" ></td>
         <td class="Сat." data-th-text="${meal.category.name}"></td>
         <td class="Eatery" data-th-text="${meal.foodstore != null} ? ${meal.foodstore.name}"></td>
-        <td><a href="/meal_descr.html" th:href="@{/meal_descr(mealId=${meal.id})}">view</a></td>
+        <!--<td><a href="/meal_descr.html" th:href="@{/meal_descr(mealId=${meal.id})}">view</a></td>-->
+        <td><a href="/meal_descr.html" th:href="@{/meal_descr/detail/__${meal.id}__}">view</a></td>
 
         <br> </br>
     </tr>

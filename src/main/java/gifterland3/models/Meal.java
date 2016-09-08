@@ -1,5 +1,7 @@
 package gifterland3.models;
 
+
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
