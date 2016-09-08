@@ -1,10 +1,10 @@
 package gifterland3.models;
 
 
-
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
+import java.sql.Blob;
 
 /**
  * Created by kdiv on 8/1/16.  meal or Product
@@ -33,6 +33,10 @@ public class Meal {
     @JoinColumn(name = "foodstore_id", referencedColumnName = "id")
     @ManyToOne(optional = true)
     private Foodstore foodstore; //HashSet?
+
+    @Column(name="image")
+    @Lob
+    private Blob image;
 
     //TODO:Поле количество наименования блюда для отдельного магазина?
     public Meal() {

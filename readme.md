@@ -30,23 +30,23 @@ Import as *Existing Maven Project* and run it as *Spring Boot App*.
 - Run the application and go on http://localhost:8080/
 - Use the following urls to invoke controllers methods and see the interactions
   with the database:
-    * `/create?email=[email]&name=[name]`: create a new user with an auto-generated id and email and name as passed values.
-    * `/delete?id=[id]`: delete the user with the passed id.
-    * `/get-by-email?email=[email]`: retrieve the id for the user with the passed email address.
-    * `/update?id=[id]&email=[email]&name=[name]`: update the email and the name for the user indentified by the passed id.
+    --* `/create?email=[email]&name=[name]`: create a new user with an auto-generated id and email and name as passed values.--
+    --* `/delete?id=[id]`: delete the user with the passed id.--
+    --* `/get-by-email?email=[email]`: retrieve the id for the user with the passed email address.--
+    --* `/update?id=[id]&email=[email]&name=[name]`: update the email and the name for the user indentified by the passed id.--
 
-ортал обмена подарками 
+Портал обмена подарками 
 
 Написать портал обмена подарками через соц. сети.
  Есть некий список заведений и товаров в них. 
 У пользователя должны возможности:
 1) Просмотреть список ЗАВЕДЕНИЕ магазинов/баров/ресторанов/закусочных. Выбрать один из них.
-(Должно быть описание магазина, телефон, адрес, условия доставки, ФИО владельца,картинка)
+(Должно быть описание магазина, телефон, адрес, условия доставки, ФИО владельца,картинка_____(((((
 
-2) В выбраном заведении просмотреть список товаров по категориям.? ???????????????????????  
+2) В выбраном заведении просмотреть список товаров по категориям.? 
 (Категории - отедельная сущность)
 Выбрать один из них (товаров) .
-(Обязательно, должна быть информация о товаре: картинка,название, цена, страна производитель, штрихкод) 
+(Обязательно, должна быть информация о товаре: картинка___VVV,название, цена, страна производитель, штрихкод) 
 
 3) Далее в списке друзей(подгружается из соц. сетей) 
  

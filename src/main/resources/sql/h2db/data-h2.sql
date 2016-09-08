@@ -16,9 +16,9 @@ INSERT INTO foodstores VALUES (2, 'Great Name', 'whatsyour@mylo.com', 'Быст�
 INSERT INTO foodstores VALUES (3, 'Точный адрес', 'описание', 'email@service.com', 'Заведение №71', 'Хозяй','Хозяевич','Хозяйнов','095-87878-1023');
 INSERT INTO foodstores VALUES (4, 'ул. Центральная 23a-45', 'Быстро и доступно', '1@m-m.com', 'Ресторация №1', 'Виктор','Глебович','Симов','095-87878-2222');
 
-INSERT INTO meal VALUES (1, 897243425, 'China', 'Цезарь', 25.99 ,7, null);  --TODO generate data
-INSERT INTO meal VALUES (2, 897243425, 'Poland', 'Multivitamin', 5.99 ,8, 3);
-INSERT INTO meal (
+INSERT INTO meal(id, barcode, manufacturer, name, price, category_id, foodstore_id) VALUES (1, 897243425, 'China', 'Цезарь', 25.99 ,7, null);  --TODO generate data
+INSERT INTO meal(id, barcode, manufacturer, name, price, category_id, foodstore_id) VALUES (2, 897243425, 'Poland', 'Multivitamin', 5.99 ,8, 3);
+INSERT INTO meal(
 id
 , barcode
 , manufacturer
