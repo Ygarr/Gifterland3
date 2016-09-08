@@ -1,5 +1,6 @@
 package gifterland3.controllers;
 
+import gifterland3.models.Meal;
 import gifterland3.models.MealDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -39,9 +40,9 @@ public class MealController {
         //Meal meals = mealDao.findByFoodstore(foodstore);
        // model.addAttribute("meals", foodstore.getMeals());
         //model.addAttribute("meals", mealDao.findByFoodstore(foodstore));
-      //  Meal meal = mealDao.findOne(mealId);
-      //  model.addAttribute("meal", meal);
-        return "meal_descr/detail";
+        Meal meal = mealDao.findOne(mealId);
+        model.addAttribute("meal", meal);
+        return "meal_descr";
     }
 
 }
