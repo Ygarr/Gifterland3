@@ -75,6 +75,9 @@ public class MealFileUploadController {
         //Execute SET  image = FILE_READ('~/icecream_obama_5Y8EIxwG_WU.jpg') WHERE ID=4; --for debug
         model.addAttribute("image", mealWithImage.getImageBlob());
         return "meals/upload";//return name of html view with thymeleaf
+        //REsult:
+        // blob8: CAST(REPEAT('00', 75618) AS BINARY /* table: -3 id: 8 */)
+        //
 
     }
 
