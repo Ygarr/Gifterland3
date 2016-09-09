@@ -48,6 +48,7 @@ public class MealFileUploadController {
         httpHeaders.setContentType(MediaType.IMAGE_JPEG);
 
         model.addAttribute("meals", mealDao.findOne(mealId));
+        model.addAttribute("image", mealDao.findOne(mealId).getImage());
 
         return "meals/upload";//"uploadForm";
     }

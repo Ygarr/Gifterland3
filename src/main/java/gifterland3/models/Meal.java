@@ -97,4 +97,7 @@ public class Meal {
         this.image = image;
     }
 
+    public Blob getImage() {
+        return image;
+    }
 }
