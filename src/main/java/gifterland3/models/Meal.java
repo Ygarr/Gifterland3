@@ -38,6 +38,10 @@ public class Meal {
     @Lob
     private Blob image;
 
+//    @Lob @Basic(fetch = FetchType.LAZY)
+//    @Column(name="content", nullable=false)
+//    private byte[] content;
+
     //TODO:Поле количество наименования блюда для отдельного магазина?
     public Meal() {
     }
@@ -87,6 +91,10 @@ public class Meal {
 
     public void setFoodstore(Foodstore store) {
         this.foodstore =  store;
+    }
+
+    public void setImage(Blob image) {
+        this.image = image;
     }
 
 }

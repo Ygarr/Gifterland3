@@ -72,6 +72,10 @@ public class Foodstore {
 //private Set<Meal> meal;
 //private Meal meal;
 
+
+//    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+//    private Set<UserDocument> userDocuments = new HashSet<UserDocument>();
+
   // ------------------------
   // PUBLIC METHODS
   // ------------------------

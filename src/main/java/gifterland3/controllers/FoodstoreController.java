@@ -74,7 +74,7 @@ public class FoodstoreController {
         foodstoreDao.delete(foodstore);
     }
     catch (Exception ex) {
-      return "Error deleting the user: " + ex.toString();
+      return "Error deleting this Foodstore entity: " + ex.toString();
     }
     return "Foodstore succesfully deleted!";
   }

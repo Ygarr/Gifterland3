@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <!--6. страница с описанием товара-->
+    <title>Детальные свойства еды</title>
+    </meta>
+</head>
+<body>
+<td class="meal name" data-th-text="${meal != null} ? ${meal.name}"></td>
+<td class="Сat." data-th-text="${meal != null} ? ${meal.category.name}"></td>
+
+    <p>
+        <a href="/meals/upload.html" th:href="@{/meals/upload/__${meal.id}__}">Upload image</a>
+    </p>
+
+</body>
+</html>

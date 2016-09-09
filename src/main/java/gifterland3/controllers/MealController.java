@@ -24,21 +24,21 @@ public class MealController {
 //    @Autowired
 //    private FoodstoreDao foodstoreDao;
 
-    @RequestMapping(value = "meal_descr", method = RequestMethod.GET)
+    @RequestMapping(value = "meals/meal_descr", method = RequestMethod.GET)
     public String detailAllMeals(Model model) {
         //model.addAttribute("productcategories", productCategoryDao.findAll());
        // model.addAttribute("meals", mealDao.findAll());
        // model.addAttribute("foodstores", foodstoreDao.findAll());
-        return "meal_descr"; //категории и товары неразделимы, поэтому сущность категории отображается в товарах
+        return "meals/meal_descr"; //категории и товары неразделимы, поэтому сущность категории отображается в товарах
 
     }
 
-    @RequestMapping(value = "meal_descr/detail/{mealId}", method = RequestMethod.GET)
+    @RequestMapping(value = "meals/meal_descr/detail/{mealId}", method = RequestMethod.GET)
     public String detailMeal(@PathVariable("mealId") Long mealId, Model model) {
 
         Meal meal = mealDao.findOne(mealId);
         model.addAttribute("meal", meal);
-        return "meal_descr";
+        return "meals/meal_descr";
     }
 
 }
