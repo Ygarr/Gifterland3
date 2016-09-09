@@ -70,8 +70,8 @@ public class MealFileUploadController {
 //    //@GetMapping("/meal_descr/detail/{mealId}") //1.4.0 Style
     @RequestMapping(value = "meals/upload/{mealId}", method = RequestMethod.GET)
     public String listUploadedImage(@PathVariable("mealId") long mealId, Model model) throws IOException, SQLException {
-        Meal mealWithImage = mealDao.findOne(mealId);
 
+        Meal mealWithImage = mealDao.findOne(mealId);
         //Execute SET  image = FILE_READ('~/icecream_obama_5Y8EIxwG_WU.jpg') WHERE ID=4; --for debug
         model.addAttribute("image", mealWithImage.getImageBlob());
         return "meals/upload";//return name of html view with thymeleaf
