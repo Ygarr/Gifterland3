@@ -83,3 +83,6 @@ on foodstores.id = meal.foodstore_id
 */
 
 -- show columns from users;
+
+--for DEBUG ONLY
+-- SET  image = FILE_READ('~/icecream_obama_5Y8EIxwG_WU.jpg') WHERE ID=4;

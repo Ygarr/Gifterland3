@@ -12,22 +12,26 @@
 <div>
     <form method="POST" enctype="multipart/form-data" action="/">
         <table>
-            <tr><td>Image to upload:</td><td><input type="file" name="image" /></td></tr>
+            <tr><td>Image to upload:</td><td><input type="file" name="imageName" /></td></tr>
             <tr><td></td><td><input type="submit" value="Upload" /></td></tr>
         </table>
     </form>
 </div>
 
+<!--<div>-->
+    <!--<ul>-->
+        <!--&lt;!&ndash;правда, еда здесь в любом случае одна, разве что будет история...&ndash;&gt;-->
+        <!--<li th:each="meal : ${meals}">-->
+            <!--<a th:href="${image}" th:text="${image}" />-->
+        <!--</li>-->
+    <!--</ul>-->
+<!--</div>-->
+
 <div>
-    <ul>
-        <!--правда, еда здесь в любом случае одна, разве что будет история...-->
-        <li th:each="meal : ${meals}">
-            <a th:href="${image}"
-                                    th:text="${image}" />
-        </li>
-    </ul>
+ <p>
+    <!--<img class="picture" или "info" th:src="@{'/pic/'+${mealId}}" />-->
+     <img class="info" th:attr="src=@{${image}}" th:text="${image}" th:href="${image}"/>
+ </p>
 </div>
-
-
 </body>
 </html>

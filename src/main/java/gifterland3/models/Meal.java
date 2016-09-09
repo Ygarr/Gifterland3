@@ -1,6 +1,8 @@
 package gifterland3.models;
 
 
+import org.springframework.web.multipart.MultipartFile;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
@@ -37,6 +39,7 @@ public class Meal {
     @Column(name="image")
     @Lob
     private Blob image;
+   // private Blob or byte[] image;
 
 //    @Lob @Basic(fetch = FetchType.LAZY)
 //    @Column(name="content", nullable=false)
@@ -93,11 +96,34 @@ public class Meal {
         this.foodstore =  store;
     }
 
-    public void setImage(Blob image) {
-        this.image = image;
+//    public void setImage(Blob image) {
+//        this.image = image;
+//    }
+
+    @Transient
+    private MultipartFile multiPartFile;
+
+//    public void setImage(MultipartFile file) throws IOException {
+//        this.multiPartFile = file;
+//        if(multiPartFile != null) {
+//            this.setImage(multiPartFile.getBytes());
+//        }
+//    }
+
+//    public MultipartFile getFile() {
+//        return file;
+//    }
+//
+//    public void setFile(MultipartFile file) {
+//        System.out.println("setFile");
+//        this.image = file;
+//    }
+//
+    public Blob getImageBlob() {
+        return image;
     }
 
-    public Blob getImage() {
-        return image;
+    public void setImageBlob(Blob content) {
+        this.image = content;
     }
 }
