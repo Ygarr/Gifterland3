@@ -6,13 +6,15 @@
     </meta>
 </head>
 <body>
-
+<div th:if="${message}">
+    <h2 th:text="${message}"/>
+</div>
 
 
 <div>
-    <form method="POST" enctype="multipart/form-data" action="/">
+    <form method="POST" enctype="multipart/form-data" action="/meals/upload/{mealId}">
         <table>
-            <tr><td>Image to upload:</td><td><input type="file" name="imageName" /></td></tr>
+            <tr><td>File to upload:</td><td><input type="file" name="file" /></td></tr>
             <tr><td></td><td><input type="submit" value="Upload" /></td></tr>
         </table>
     </form>
@@ -28,10 +30,32 @@
 <!--</div>-->
 
 <div>
- <p>
-    <!--<img class="picture" или "info" th:src="@{'/pic/'+${mealId}}" />-->
-     <img class="info" th:attr="src=@{${image}}" th:text="${image}" th:href="${image}"/>
- </p>
+    <ol>
+        <li th:each="file : ${files}">
+            <a th:href="${file}" th:text="${file}" />
+        </li>
+    </ol>
+</div>
+
+<div>
+    <ul>
+        <li th:each="file : ${files}">
+            <img class="picture" th:attr="src=@{${file}}" />
+        </li>
+    </ul>
+</div>
+
+
+<div>
+ <!--<p>-->
+    <!--&lt;!&ndash;<img class="picture" или "info" th:src="@{'/pic/'+${mealId}}" />&ndash;&gt;-->
+        <!--&lt;!&ndash;just text:&ndash;&gt;-->
+     <!--&lt;!&ndash;<img class="info" th:attr="src=@{${image}}" th:text="${image}" th:href="${image}"/>&ndash;&gt;-->
+
+     <!--<img th:src="@{showImage(file='icecream.jpg'}" />-->
+ <!--</p>-->
+
+
 </div>
 </body>
 </html>

@@ -1,12 +1,17 @@
 package gifterland3;
 
 import gifterland3.models.ProductCategoryDao;
+import gifterland3.service.MealStorageService;
+import gifterland3.service.impl.StorageProperties;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
+@EnableConfigurationProperties(StorageProperties.class)
 public class Application implements CommandLineRunner {
 
     @Autowired
@@ -37,5 +42,12 @@ public class Application implements CommandLineRunner {
 //        productCategoryDao.save(new ProductCategory("Drinks"));
     }
 
+    @Bean
+    CommandLineRunner init(MealStorageService storageService) {
+        return (args) -> {
+            storageService.deleteAll();
+            storageService.init();
+        };
+    }
 
 }
