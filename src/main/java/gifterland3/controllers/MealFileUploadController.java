@@ -1,5 +1,7 @@
 package gifterland3.controllers;
 
+import gifterland3.models.Meal;
+import gifterland3.models.MealDao;
 import gifterland3.service.MealStorageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
@@ -29,6 +31,9 @@ public class MealFileUploadController {
     public MealFileUploadController(MealStorageService mealStorageService) {
         this.mealStorageService = mealStorageService;
     }
+
+    @Autowired
+    private MealDao mealDao;
 
 //    @Autowired
 //    private MealDao mealDao;
@@ -136,6 +141,7 @@ public class MealFileUploadController {
                                 .fromMethodName(MealFileUploadController.class, "serveFile", path.getFileName().toString())
                                 .build().toString())
                 .collect(Collectors.toList()));
+        //model.addAttribute("meal",meal);
 
         return "meals/upload";
     }
@@ -155,6 +161,9 @@ public class MealFileUploadController {
     public String handleFileUpload(@RequestParam("file") MultipartFile file,
                                    RedirectAttributes redirectAttributes) {
         mealStorageService.store(file);
+//        Meal meal = mealDao.findOne(mealId);
+//        meal.setImageBlob(file);
+//        mealDao.save(meal);
         redirectAttributes.addFlashAttribute("message",
                 "You successfully uploaded " + file.getOriginalFilename() + "!");
         return "redirect:/meals/upload/{mealId}";

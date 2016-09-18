@@ -7,11 +7,38 @@
     </meta>
 </head>
 <body>
-<td class="meal name" data-th-text="${meal != null} ? ${meal.name}"></td>
+<td class="meal name" data-th-text="${meal != null} ? ${meal.name}"> </td>
+<br></br>
 <td class="Сat." data-th-text="${meal != null} ? ${meal.category.name}"></td>
 
-    <p>
-        <a href="/meals/upload.html" th:href="@{/meals/upload/__${meal.id}__}">Upload image</a>
+<!--<img class="picture" th:attr="src=@{${media}}" />-->
+
+<!--<a th:href="${file}" th:text="${file}" />-->
+<!--<img th:src="*{'data:image/jpg;base64,'+media}" alt="" />-->
+<!--<img th:src="@{'data:image/jpg;base64,'+media}" alt="image" />-->
+<!--<img th:src="*{'data:image/jpg;base64,'+${media}}" alt="" />-->
+<br></br>
+<img th:src="@{'data:image/jpg;base64,'+${media}}" alt="image" />
+
+
+<!--it all works:-->
+<!--<img class="info" th:src="@{'data:image/jpeg;base64,'+${media}}" />-->
+<!--<img class="picture" th:src="@{'data:image/jpeg;base64,'+${media}}" />-->
+<!--<img class="info" th:attr="src=@{'data:image/jpeg;base64,'+${media}}" />-->
+<!--<img class="picture" th:attr="src=@{'data:image/jpeg;base64,'+${media}}" />-->
+
+<!--these all works:-->
+<!--<img class="info" th:src="@{'data:image/jpg;base64,'+${media}}" />-->
+<!--<img class="picture" th:src="@{'data:image/jpg;base64,'+${media}}" />-->
+<!--<img class="info" th:attr="src=@{'data:image/jpg;base64,'+${media}}" />-->
+<!--<img class="picture" th:attr="src=@{'data:image/jpg;base64,'+${media}}" />-->
+
+<!--<img th:src="*{'data:image/jpeg;base64,'+${encodedBytes}}" />-->
+
+<!--<img th:src="@{meals/meal_descr/detail/{mealId}" />-->
+
+<p>
+        <a href="/meals/upload.html" th:href="@{/meals/upload/__${meal.id}__}">Link to Server Filesystem Uploader of images</a>
     </p>
 
 </body>

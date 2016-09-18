@@ -39,7 +39,7 @@ public class Meal {
     @Column(name="image")
     @Lob
     private Blob image;
-   // private Blob or byte[] image;
+   // private Blob or byte[] or @Lob image;
 
 //    @Lob @Basic(fetch = FetchType.LAZY)
 //    @Column(name="content", nullable=false)
@@ -100,8 +100,8 @@ public class Meal {
 //        this.image = image;
 //    }
 
-    @Transient
-    private MultipartFile multiPartFile;
+//    @Transient
+//    private MultipartFile multiPartFile;
 
 //    public void setImage(MultipartFile file) throws IOException {
 //        this.multiPartFile = file;
