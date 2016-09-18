@@ -86,4 +86,4 @@ on foodstores.id = meal.foodstore_id
 
 --for DEBUG ONLY AND if image filed is blob or lob
 -- update MEAL SET  image = FILE_READ('~/icecream.jpg') WHERE ID=4;
- update MEAL SET  image = FILE_READ('classpath:/pic/icecream.jpg') WHERE ID=4;
+ update MEAL SET  image = FILE_READ('classpath:/pic/salad.png') WHERE ID=4;

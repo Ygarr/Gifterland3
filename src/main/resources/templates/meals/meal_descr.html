@@ -18,7 +18,10 @@
 <!--<img th:src="@{'data:image/jpg;base64,'+media}" alt="image" />-->
 <!--<img th:src="*{'data:image/jpg;base64,'+${media}}" alt="" />-->
 <br></br>
-<img th:src="@{'data:image/jpg;base64,'+${media}}" alt="image" />
+<!--Dont care jpg or png, all works-->
+<!--<img th:src="@{'data:image/jpg;base64,'+${media}}" alt="image" style="width: 150px; height: 150px;"/>-->
+<!--<img th:src="@{'data:image/png;base64,'+${media}}" alt="image" style="width: 150px; height: 150px;"/>-->
+<img th:src="@{'data:image;base64,'+${media}}" alt="image" style="width: 150px; height: 150px;"/>
 
 
 <!--it all works:-->
