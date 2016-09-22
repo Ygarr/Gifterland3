@@ -21,6 +21,10 @@ public class FacebookController {
     /**
      *     Controller is created by injecting a Facebook object into its constructor.
      * The Facebook object is a reference to Spring Social’s Facebook API binding.
+     *
+     * Err, than Error Diappears:https://www.facebook.com/v2.5/dialog/oauth;jsessionid=aidhtflkm40t1exe023146bib?client_id=1778357655710541&response_type=code&redirect_uri=http%3A%2F%2Flocalhost%3A8080%2Fconnect%2Ffacebook&scope=user_posts&state=3c019c26-9202-4f5b-908e-b6b46fed63fe
+     *
+     * Why v2.5 not 2.7?
      */
     private Facebook facebook;
     private ConnectionRepository connectionRepository;
@@ -43,7 +47,8 @@ public class FacebookController {
         return "facebookFeed";
     }
 
-    @RequestMapping("/friends_list")
+
+    @RequestMapping(value="/friends_list", method=RequestMethod.GET)
     public String helloFacebookFriends(Model model) {
         if (connectionRepository.findPrimaryConnection(Facebook.class) == null) {
             return "redirect:/connect/facebook";
