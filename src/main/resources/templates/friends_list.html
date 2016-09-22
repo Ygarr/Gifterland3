@@ -8,13 +8,11 @@
 <body>
 <h3>Hello, <span th:text="${facebookProfile.name}">Some User</span>!</h3>
 
-<h4>Here is yours:</h4>
-
-<div th:each="friend:${friends}">
-    <b th:text="${friend.name}">from</b> wrote:
-    <p th:text="${friend.id}">message text</p>
-    <img th:if="${friend.picture}" th:src="${friend.picture}"/>
-    <hr/>
+<div id="content" layout:fragment="content">
+    <h3>Your Facebook Friends</h3>
+    <ul class="friends">
+        <li th:each="friend : ${friends}"><img th:src="'http://graph.facebook.com/' + ${friend.id} + '/picture'" align="middle"/><span th:text="${friend.name}">name</span></li>
+    </ul>
 </div>
 </body>
 </html>
