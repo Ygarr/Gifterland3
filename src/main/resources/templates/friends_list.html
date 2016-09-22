@@ -1,11 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8"></meta>
     <!--3. список друзей-->
     <title>Title</title>
 </head>
 <body>
+<h3>Hello, <span th:text="${facebookProfile.name}">Some User</span>!</h3>
 
+<h4>Here is yours:</h4>
+
+<div th:each="friend:${friends}">
+    <b th:text="${friend.name}">from</b> wrote:
+    <p th:text="${friend.id}">message text</p>
+    <img th:if="${friend.picture}" th:src="${friend.picture}"/>
+    <hr/>
+</div>
 </body>
 </html>
